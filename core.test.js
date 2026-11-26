@@ -1,0 +1,13 @@
+'use strict';
+const test=require('node:test'), assert=require('node:assert/strict'),C=require('./core.js');
+const map=['C1','PEG','C2','SS'].flatMap((condition,j)=>[0,1,2].map(i=>({cell:'A',condition,culture:i+1,column:String(j*3+i+1)})));
+const g=(id,lfq,msms,extra={})=>({id,proteins:id,majority:id,peptides:2,unique:1,excluded:false,lfq,msms,...extra});
+const a=[0,0,0,1,1,0,0,0,0,1,1,1],b=[0,0,0,0,0,0,0,0,0,1,1,1];
+const data={map,groups:[g('shared',a,a),g('SS',b,b),g('transfer',b,Array(12).fill(0)),g('control',[1,...b.slice(1)],[1,...b.slice(1)]),g('reverse',b,b,{excluded:true}),g('single',b,b,{peptides:1})]};
+test('Direct evidence and global peptide filters retain expected memberships',()=>{const r=C.analyze(data,{cell:'A'});assert.equal(r.SS,3);assert.equal(r.PEG,1);assert.deepEqual(r.members.map(x=>x.id),['shared','SS','control']);assert.equal(r.shared,1);});
+test('Controls use LFQ independently of the evidence rule',()=>{const d=structuredClone(data);d.groups[3].msms[0]=0;const r=C.analyze(d,{cell:'A',control:'both'});assert.equal(r.SS,2);assert(!r.members.some(x=>x.id==='control'));});
+test('LFQ retains transfers and single peptide groups while reverse stays excluded',()=>{assert.equal(C.analyze(data,{cell:'A',rule:'lfq'}).SS,5);});
+test('A missing comparator yields undefined retention and ratio, not infinity',()=>{const r=C.analyze(data,{cell:'A',minimum:3});assert.equal(r.PEG,0);assert.equal(r.retention,null);assert.equal(r.listRatio,null);});
+test('All nine independent omission combinations use remaining unions',()=>{const r=C.analyze(data,{cell:'A',minimum:3});assert.equal(r.omissions.length,9);assert(r.omissions.every(x=>x.PEG===1&&x.SS===3));});
+test('Invalid culture thresholds and sample maps fail explicitly',()=>{assert.throws(()=>C.analyze(data,{cell:'A',minimum:4}));assert.throws(()=>C.validateMap([...map,map[0]]));assert.throws(()=>C.parseMaxQuant('id\tProtein IDs\n1\tP1',map),/Missing required/);});
+test('Quoted TSV and spreadsheet formula protection',()=>{assert.deepEqual(C.parseDelimited('a\tb\r\n"x\ty"\t"q""r"\r\n'),[['a','b'],['x\ty','q"r']]);assert(C.csv([{a:'=cmd()',b:'ordinary'}]).includes("'=cmd()"));});

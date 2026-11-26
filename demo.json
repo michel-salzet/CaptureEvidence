@@ -1,0 +1,513 @@
+{
+  "version": "1.0.0",
+  "sourceName": "Synthetic demonstration (not biological data)",
+  "sourceSHA256": null,
+  "map": [
+    {
+      "cell": "Synthetic example",
+      "condition": "C1",
+      "culture": 1,
+      "column": "1"
+    },
+    {
+      "cell": "Synthetic example",
+      "condition": "C1",
+      "culture": 2,
+      "column": "2"
+    },
+    {
+      "cell": "Synthetic example",
+      "condition": "C1",
+      "culture": 3,
+      "column": "3"
+    },
+    {
+      "cell": "Synthetic example",
+      "condition": "PEG",
+      "culture": 1,
+      "column": "4"
+    },
+    {
+      "cell": "Synthetic example",
+      "condition": "PEG",
+      "culture": 2,
+      "column": "5"
+    },
+    {
+      "cell": "Synthetic example",
+      "condition": "PEG",
+      "culture": 3,
+      "column": "6"
+    },
+    {
+      "cell": "Synthetic example",
+      "condition": "C2",
+      "culture": 1,
+      "column": "7"
+    },
+    {
+      "cell": "Synthetic example",
+      "condition": "C2",
+      "culture": 2,
+      "column": "8"
+    },
+    {
+      "cell": "Synthetic example",
+      "condition": "C2",
+      "culture": 3,
+      "column": "9"
+    },
+    {
+      "cell": "Synthetic example",
+      "condition": "SS",
+      "culture": 1,
+      "column": "10"
+    },
+    {
+      "cell": "Synthetic example",
+      "condition": "SS",
+      "culture": 2,
+      "column": "11"
+    },
+    {
+      "cell": "Synthetic example",
+      "condition": "SS",
+      "culture": 3,
+      "column": "12"
+    }
+  ],
+  "groups": [
+    {
+      "id": "0",
+      "proteins": "SYNTHETIC_0",
+      "majority": "GLY_SYNTHETIC_0",
+      "peptides": 2,
+      "unique": 1,
+      "excluded": false,
+      "lfq": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        0,
+        0,
+        0,
+        1000,
+        1000,
+        1000
+      ],
+      "msms": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "1",
+      "proteins": "SYNTHETIC_1",
+      "majority": "SYNTHETIC_1",
+      "peptides": 3,
+      "unique": 1,
+      "excluded": false,
+      "lfq": [
+        0,
+        0,
+        0,
+        2000,
+        2000,
+        2000,
+        0,
+        0,
+        0,
+        2000,
+        2000,
+        0
+      ],
+      "msms": [
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        0,
+        0,
+        0,
+        2,
+        2,
+        0
+      ]
+    },
+    {
+      "id": "2",
+      "proteins": "SYNTHETIC_2",
+      "majority": "SYNTHETIC_2",
+      "peptides": 4,
+      "unique": 1,
+      "excluded": false,
+      "lfq": [
+        0,
+        0,
+        0,
+        3000,
+        3000,
+        3000,
+        0,
+        0,
+        0,
+        3000,
+        0,
+        3000
+      ],
+      "msms": [
+        0,
+        0,
+        0,
+        3,
+        3,
+        3,
+        0,
+        0,
+        0,
+        3,
+        0,
+        3
+      ]
+    },
+    {
+      "id": "3",
+      "proteins": "SYNTHETIC_3",
+      "majority": "GLY_SYNTHETIC_3",
+      "peptides": 5,
+      "unique": 1,
+      "excluded": false,
+      "lfq": [
+        0,
+        0,
+        0,
+        4000,
+        4000,
+        4000,
+        0,
+        0,
+        0,
+        0,
+        4000,
+        4000
+      ],
+      "msms": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "id": "4",
+      "proteins": "SYNTHETIC_4",
+      "majority": "SYNTHETIC_4",
+      "peptides": 2,
+      "unique": 1,
+      "excluded": false,
+      "lfq": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5000,
+        5000,
+        5000
+      ],
+      "msms": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "id": "5",
+      "proteins": "SYNTHETIC_5",
+      "majority": "SYNTHETIC_5",
+      "peptides": 3,
+      "unique": 1,
+      "excluded": false,
+      "lfq": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6000,
+        6000,
+        0
+      ],
+      "msms": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        3,
+        0
+      ]
+    },
+    {
+      "id": "6",
+      "proteins": "SYNTHETIC_6",
+      "majority": "GLY_SYNTHETIC_6",
+      "peptides": 4,
+      "unique": 1,
+      "excluded": false,
+      "lfq": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        7000,
+        0,
+        7000
+      ],
+      "msms": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1
+      ]
+    },
+    {
+      "id": "7",
+      "proteins": "SYNTHETIC_7",
+      "majority": "SYNTHETIC_7",
+      "peptides": 5,
+      "unique": 1,
+      "excluded": false,
+      "lfq": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        8000,
+        8000
+      ],
+      "msms": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2
+      ]
+    },
+    {
+      "id": "8",
+      "proteins": "SYNTHETIC_8",
+      "majority": "SYNTHETIC_8",
+      "peptides": 2,
+      "unique": 1,
+      "excluded": false,
+      "lfq": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        9000,
+        9000,
+        9000
+      ],
+      "msms": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "id": "9",
+      "proteins": "SYNTHETIC_9",
+      "majority": "GLY_SYNTHETIC_9",
+      "peptides": 3,
+      "unique": 1,
+      "excluded": false,
+      "lfq": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10000,
+        10000,
+        0
+      ],
+      "msms": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "10",
+      "proteins": "SYNTHETIC_10",
+      "majority": "SYNTHETIC_10",
+      "peptides": 4,
+      "unique": 1,
+      "excluded": false,
+      "lfq": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "msms": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": "11",
+      "proteins": "SYNTHETIC_11",
+      "majority": "SYNTHETIC_11",
+      "peptides": 5,
+      "unique": 1,
+      "excluded": true,
+      "lfq": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "msms": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ]
+}

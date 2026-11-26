@@ -1,0 +1,14 @@
+{
+  "name": "capture-evidence",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline protein-group evidence explorer",
+  "scripts": {
+    "test": "node --test core.test.js",
+    "build": "node build.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
