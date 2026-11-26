@@ -1,0 +1,32 @@
+name: Verify and build
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  native-tests:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.27.4'
+          cache: false
+      - run: node --test core.test.js
+      - run: node build.js
+      - run: go test ./...
+      - run: go build -o CaptureEvidence-launcher${{ runner.os == 'Windows' && '.exe' || '' }} .
+      - name: Extract embedded application
+        shell: bash
+        run: ./CaptureEvidence-launcher${{ runner.os == 'Windows' && '.exe' || '' }} --extract smoke-output --no-open
+      - uses: actions/upload-artifact@v4
+        with:
+          name: CaptureEvidence-${{ runner.os }}
+          path: |
+            CaptureEvidence-launcher*
+            dist/CaptureEvidence.html
